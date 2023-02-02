@@ -15,10 +15,10 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - ./gradlew build 
-      - curl -sL https://deb.nodesource.com/setup_16.x | bash -
-      - apt-get -y upgrade
-      - apt-get -y install nodejs
+          ./gradlew build 
+          curl -sL https://deb.nodesource.com/setup_16.x | bash -
+          apt-get -y upgrade
+          apt-get -y install nodejs
   
   Snyk_SCA_Test:
     runs-on: gradle:7.3.3-jdk17
