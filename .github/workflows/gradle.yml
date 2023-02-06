@@ -2,7 +2,9 @@ name: GitHub Actions Demo
 on: workflow_dispatch
 jobs:
   Test:
-    runs-on: gradle:7.3.3-jdk17
+    runs-on: ubuntu-latest
+    container:
+      image: gradle:7.3.3-jdk17
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -21,7 +23,9 @@ jobs:
           apt-get -y install nodejs
   
   Snyk_SCA_Test:
-    runs-on: gradle:7.3.3-jdk17
+    runs-on: ubuntu-latest
+    container:
+      image: gradle:7.3.3-jdk17
     steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
